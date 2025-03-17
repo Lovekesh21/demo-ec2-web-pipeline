@@ -1,6 +1,8 @@
 version: 0.0
 os: linux
 files:
+  - source: restart_apache.sh
+    destination: /var/www/html
   - source: /
     destination: /var/www/html
 permissions:
@@ -8,8 +10,13 @@ permissions:
     owner: apache
     group: apache
     mode: 755
+  - object: /var/www/html/restart_apache.sh
+    owner: root
+    group: root
+    mode: 755
 hooks:
   AfterInstall:
-    - location: /var/www/html/restart_apache.sh
+    - location: restart_apache.sh
       timeout: 30
       runas: root
+
