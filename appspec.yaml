@@ -10,6 +10,6 @@ permissions:
     mode: 755
 hooks:
   AfterInstall:
-    - location: /restart_apache.sh
+    - location: restart_apache.sh
       timeout: 30
       runas: root
