@@ -4,6 +4,10 @@ os: linux
 files:
   - source: restart_apache.sh
     destination: /var/www/html
+  - source: index.html
+    destination: /var/www/html
+  - source: appspec.yaml
+    destination: /var/www/html
 
 permissions:
   - object: /var/www/html
@@ -17,6 +21,7 @@ permissions:
 
 hooks:
   AfterInstall:
-    - location: restart_apache.sh
+    - location: /var/www/html/restart_apache.sh
       timeout: 30
       runas: root
+
