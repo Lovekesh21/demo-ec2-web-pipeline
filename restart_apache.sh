@@ -1,3 +1,3 @@
 #!/bin/bash
 sudo systemctl restart httpd
-chmod +x restart_apache.sh
+chmod +x /var/www/html/restart_apache.sh
